@@ -11,3 +11,5 @@ The course is on the design patterns designed in the Gang of Four book. This rep
 ### SOLID Principles
 
     - Single Responsibility Principle
+    - Open-Closed Principle
+    - Liskov Substitution Principle
