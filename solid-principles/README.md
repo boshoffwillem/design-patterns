@@ -20,3 +20,8 @@ The specification pattern basically dictates whether or not an object satisfies 
 The idea is that you should be able to substitute a base type for a sub-type.
 The Liskov principle states that you should always be able to cast to your base type and everything should still be fine.
 A simple way to achieve this is basically through polymorphism.
+
+## Interface Segregation Principle
+
+The idea is that when your interface gets to large, you segregate it into smaller interfaces, so that no one who
+implements your interface has to implement functionality that they don't need.
