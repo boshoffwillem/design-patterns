@@ -3,7 +3,8 @@
 ## Single Responsibility Principle
 
 This principle specifies that any class should just have a single reason to change.
-Putting it another way would be to call it **Separation of Concerns**.
+Putting it another way would be to call it **Separation of Concerns**: different classes
+handle different, independent tasks/problems.
 
 ## Open-Closed Principle
 
@@ -25,3 +26,7 @@ A simple way to achieve this is basically through polymorphism.
 
 The idea is that when your interface gets to large, you segregate it into smaller interfaces, so that no one who
 implements your interface has to implement functionality that they don't need.
+
+## Dependency Inversion Principle
+
+High level parts of the system should not depend on low level parts of the system directly; instead they should depend on some kind of distraction.
