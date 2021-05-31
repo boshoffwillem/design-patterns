@@ -46,3 +46,27 @@ Having an object with 10 constructor arguments is not productive.
 
 Instead, opt for piecewise construction.
 A builder should provide a good API for constructing an object step-by-step.
+
+- The sole purpose of a builder is to build up an object.
+- You can either give the builder a constructor an explicitly create it,
+or you can return the builder  from the related object through a static method.
+
+### Builder
+
+In the example we will build an HTML builder. HTML elements have an opening and closing tag,
+as well as indentation for nested elements. Outputting a simple unordered list can be very tedious  
+if not done with a builder. By writing a builder, we can easily output HTML without having to worry
+about indentation and opening and closing tags. We implement the logic for indentation and tags once  
+and we don't worry about it again.
+
+### Fluent Builder
+
+To achieve a fluent interface of the builder simply return the reference of your builder.
+Then you can chain various calls to your builder.
+
+### Faceted Builder
+
+Sometimes object construction is too complex for one builder to handle, and so we need
+to use multiple builders. You start by creating a general builder for the actual object.
+But this builder won't do any building. It's a facade to other builders, and it keeps a reference
+to the object that's being built.
