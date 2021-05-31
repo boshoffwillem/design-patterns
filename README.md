@@ -8,11 +8,11 @@ The course is on the design patterns designed in the Gang of Four book. This rep
 
 ### SOLID Principles
 
-    - Single Responsibility Principle
-    - Open-Closed Principle
-    - Liskov Substitution Principle
-    - Interface Segregation Principle
-    - Dependency Inversion Principle
+- Single Responsibility Principle
+- Open-Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
 
 ### Gang of Four Patterns
 
@@ -22,7 +22,8 @@ Deals with the creation (construction) of objects.
 Explicit (constructor) creation vs. implicit (dependency injection, etc.) creation.
 Wholesale (single statement) creation vs. piecewise (step-by-step) creation.
 
-    - Factories
+- Factories
+- Builders
 
 #### Structural Patterns
 
