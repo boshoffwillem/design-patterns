@@ -70,3 +70,58 @@ Sometimes object construction is too complex for one builder to handle, and so w
 to use multiple builders. You start by creating a general builder for the actual object.
 But this builder won't do any building. It's a facade to other builders, and it keeps a reference
 to the object that's being built.
+
+## Prototypes
+
+The Prototype pattern is all about object copying.
+
+### Motivation for Prototypes
+
+- Complicated objects (e.g., cars) are not designed from scratch.
+- New complicated objects (cars) are created by reiterating existing designs.
+- A Prototype is an existing object that was partially of fully constructed.
+- A Prototype is also an object that we can make a clone of and then customize it.
+  - To enable cloning the object must have deep copy support.
+- The cloning must be convenient (e.g., via a Factory)
+
+**A Prototype is a partially or fully initialized object that you copy and make use of**.
+
+- To implement a prototype partially construct an object and store it somewhere
+- Clone the prototype:
+  - Implement your own deep copy interface
+  - Serialize and de-serialize
+- Customize the resulting instance
+
+### Copy Constructors
+
+A copy constructor is a C++ term. The idea is simple.
+You add a constructor to your object (Prototype) that takes as a parameter the object (of the same type obviously)
+that you want to deep copy. You then copy the internals that you want from that object into yourself.
+
+The problem with this is that if you have an object that contains other objects, everyone of those objects needs
+to have a copy constructor as well, otherwise their copy will be a shallow copy.
+
+This approach will work, but the more complex that an object becomes the more tedious it will become to scale this approach.
+
+### Explicit Deep Copy Interface
+
+Another approach is to define and interface to deep copy an object.
+Unfortunately we are still stuck with needing to have every object within the Prototype
+implement the deep copy interface.
+
+This approach is better, but this approach can still be very tedious.
+
+### Prototype Inheritance
+
+One of the problems with having a deep copy interface is what happens when you inherit from a class that
+implements the deep copy interface. Like many solutions to inheritance problems you can get around it,
+but it's going to be messy.
+
+The reason for the messy part is that in order for Prototype Inheritance to work you need fully initializing constructors. So obviously as soon as you have any decent inheritance hierarchy this will get messy. If this you're fine with having fully initializing constructors all over the place then you don't have to do any magic and the deep copying will work.
+
+If you want to avoid having fully initialing constructors then we have to do some magic by improving the interface and defining some extension methods.
+
+### Copy Through Serialization
+
+Making a deep copy of an object through serialization is a much easier and scalable way of doing it.
+This is how the Prototype pattern is actually done in the real world: by serializing an object and then de-serializing it to have a deep copy of the object.
