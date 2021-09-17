@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/solid-principles/SingleResponsibilityPrinciple/UdemyCourseExample/bin/Debug/net5.0/SingleResponsibilityPattern.dll",
+            "program": "${workspaceFolder}/gang-of-four-patterns/CreationalPatterns/Singleton/UdemyCourseExample/bin/Debug/net5.0/SingletonPattern.dll",
             "args": [],
             "cwd": "${workspaceFolder}/solid-principles/SingleResponsibilityPrinciple/UdemyCourseExample",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console

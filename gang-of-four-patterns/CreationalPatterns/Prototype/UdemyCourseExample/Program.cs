@@ -4,7 +4,7 @@ namespace UdemyCourseExample
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             #region Copy Constructor
 
@@ -59,11 +59,6 @@ namespace UdemyCourseExample
             var john4 = new Person4(new []{"John", "Smith"},
                 new Address4("London Road", 123));
             Console.WriteLine(john4);
-
-            var jane4 = john4.SerializationDeepCopy();
-            jane4.Names[0] = "Jane";
-            jane4.Address.HouseNumber = 321;
-            Console.WriteLine(jane4);
 
             var jim = john4.SerializationDeepCopyXml();
             jim.Names[0] = "Jim";

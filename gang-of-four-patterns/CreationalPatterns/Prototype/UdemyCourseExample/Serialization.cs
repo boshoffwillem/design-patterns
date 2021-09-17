@@ -8,23 +8,6 @@ namespace UdemyCourseExample
     public static class SerializationExtensionMethods
     {
         /// <summary>
-        /// Any class that you want to serialize using this method must have
-        /// a Serializeable attribute.
-        /// </summary>
-        /// <param name="self"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T SerializationDeepCopy<T>(this T self)
-        {
-            using var stream = new MemoryStream();
-            var formatter = new BinaryFormatter();
-            formatter.Serialize(stream, self);
-            stream.Position = 0;
-            object copy = formatter.Deserialize(stream);
-            return (T)copy;
-        }
-
-        /// <summary>
         /// Any class that you want to serialize using this method
         /// must have a parameterless constructor.
         /// </summary>
