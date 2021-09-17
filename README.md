@@ -25,6 +25,7 @@ Wholesale (single statement) creation vs. piecewise (step-by-step) creation.
 - Factories
 - Builders
 - Prototypes
+- Singleton
 
 #### Structural Patterns
 
