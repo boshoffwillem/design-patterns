@@ -2,11 +2,38 @@
 
 This is a repo to document design patterns that I learned from a Udemy course (<https://www.udemy.com/share/1013nUAEYacF9SR3Q=/>).
 
-The course is on the design patterns designed in the Gang of Four book. This repo also contains any other patterns that I've come to learn.
+The course is on the design patterns designed in the Gang of Four book.
+This repository also contains any other patterns that I've come to learn.
 
-## Patterns
+## Recursive Generics Pattern
 
-### SOLID Principles
+This pattern is defined first, becuase many of the other examples use this.
+Recursive generics is used when you have a decent inheritance hierarchy
+and you need to be able to propagate the most derived class to either
+the base class or any other parent class.
+Excellent article: (<https://vyazelenko.com/2012/03/02/recursive-generics-to-the-rescue/>)
+
+Recursive generics is a cleaner, more elegant solution,
+than using Co-variant return types.
+
+Co-variant return types is to permit the override of a method to return a more
+derived return type than the method it overrides, and similarly to permit the
+override of a read-only property to return a more derived return type.
+Callers of the method or property would statically receive the more refined
+return type from an invocation, and overrides appearing in more derived types
+would be required to provide a return type at least as specific as that
+appearing in overrides in its base types.
+
+The problem that both **Recursive generics** and **Co-variant return types**
+are trying to solve is the scenario where you have a base class method that returns
+the base type. Then when you call that method from derived classes you actually want
+that method to return the derived type instead of the base type.
+
+A classic example is that you define a factory method in the base class
+that returns the base class. But when you call the factory method from derived
+classes it should return the derived class.
+
+## SOLID Principles
 
 - Single Responsibility Principle
 - Open-Closed Principle
@@ -14,9 +41,9 @@ The course is on the design patterns designed in the Gang of Four book. This rep
 - Interface Segregation Principle
 - Dependency Inversion Principle
 
-### Gang of Four Patterns
+## Gang of Four Patterns
 
-#### Creational Patterns
+### Creational Patterns
 
 Deals with the creation (construction) of objects.
 Explicit (constructor) creation vs. implicit (dependency injection, etc.) creation.
@@ -27,15 +54,15 @@ Wholesale (single statement) creation vs. piecewise (step-by-step) creation.
 - Prototypes
 - Singleton
 
-#### Structural Patterns
+### Structural Patterns
 
 Concerned with the structure of classes (e.g. class members).
 Many patterns are wrappers that mimic the underlying class' interface.
 Stress the importance of good API design.
 
-...
+- Adapter
 
-#### Behavioral Patterns
+### Behavioral Patterns
 
 The patterns are all different; no central theme.
 
