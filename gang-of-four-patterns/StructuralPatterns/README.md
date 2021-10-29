@@ -1,11 +1,11 @@
 # Structural Patterns
 
-## Adapter
+## 1. Adapter
 
 The concept of the Adapter pattern is simple:
 you want to get the interface that you want from the interface that you are given.
 
-### Motivation for Adapters
+### 1.1 Motivation for Adapters
 
 For a physical example think of an electrical plug and some device.
 Different countries have different power (interface) requirements:
@@ -27,7 +27,7 @@ You can deal with this by simply implementing caching or memoization,
 to prevent the Adapter from re-calculating or re-adapting something
 that has already been adapted.
 
-### Generic Value Adapter
+### 1.2 Generic Value Adapter
 
 The Generic Value Adapter design pattern adapts a literal value
 like 2 to a type. The reason for this is that when you have
@@ -41,9 +41,43 @@ parameters is the dimensions of the vector, you cannot specify
 So the Generic Value Adapter converts literals to types, so that
 we can solve this problem.
 
-### Summary
+### 1.3 Summary
 
 - Implementing an adapter is easy
 - Determine the API that you have and the API that you need
 - Create a component which aggregates (has a reference to) the adapted component
 - Intermediate representations can pile up: use caching (memoization) and other optimizations
+
+## 2. Bridge
+
+Connecting components through abstractions.
+
+### 2.1 Motivation for Bridges
+
+Bridge prevents a "Cartesian product" complexity explosion.
+
+For example, You decide to make a ThreadScheduler. The ThreadScheduler can be
+
+- Preemptive or cooperative
+- Run on Windows or Unix
+
+Now you have a 2x2 scenario:
+
+- Preemptive Windows
+- Cooperative Windows
+- Preemptive Unix
+- Cooperative Unix
+
+So you end up with four classes effectively.
+The Bridge pattern tries to avoid this entity/class explosion.
+
+**So, the Bridge pattern is a mechanism that decouples an interface (hierarchy)
+from an implementation (hierarchy).**
+
+### 2.2 Summary
+
+- A bridge is used to decouple an abstraction from an implementation.
+- Both the abstraction and implementation can be hierarchies.
+- A bridge is almost like a stronger form of encapsulation,
+because it hides functionality by compartmentalizing it,
+instead of doing through a simple inheritance hierarchy.

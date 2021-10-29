@@ -1,6 +1,4 @@
-﻿using System;
-using Autofac;
-using UdemyCourseExample;
+﻿using Autofac;
 using Xunit;
 
 namespace SingletonPattern
