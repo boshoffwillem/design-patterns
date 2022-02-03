@@ -67,4 +67,20 @@ Stress the importance of good API design.
 
 The patterns are all different; no central theme.
 
-...
+## Patterns of Enterprize Architecture
+
+### Transaction Script
+
+This pattern is a very simple way of organizing domain logic.
+It's just a single procedure on top of the database, and inside
+that procedure is where your domain logic is located.
+
+Since all the domain logic is wrapped up in that procedure,
+it's best used for simple situations. If you domain logic becomes
+to rich, you might have to refactor to something like the Domain Model.
+
+Transaction Scripts are kind of an anti-object-oriented approach -- which
+is not a problem; it depends on the use case.
+
+In the long run this pattern is probably not sustainable -- it doesn't scale.
+Your probably better of just starting with the Domain Model pattern.
