@@ -84,3 +84,10 @@ is not a problem; it depends on the use case.
 
 In the long run this pattern is probably not sustainable -- it doesn't scale.
 Your probably better of just starting with the Domain Model pattern.
+
+### Domain Model
+
+The Domain Model is more of an object-oriented approach to domain modeling.
+The objects capture all the domain logic and since we're working with
+objects it really stresses design patterns. Which will mean you more likely
+to end up with a nice loosely-coupled architecture.
