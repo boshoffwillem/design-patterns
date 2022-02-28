@@ -96,3 +96,10 @@ and compositions of objects in a uniform manner.
 - Composite design pattern is used to treat both single (scalar)
 and composite objects uniformly
     - I.e., ```Foo``` and ```Collection<Foo>``` have common APIs
+    
+### 3.2 Summary
+
+- Objects can use all other objects via inheritance/composition
+- Some composed and singular objects need similar/identical behaviors
+- Composite design pattern lets us treat both types of objects uniformly
+- A single object can masquerade as a collection with ```yield return this;```.
