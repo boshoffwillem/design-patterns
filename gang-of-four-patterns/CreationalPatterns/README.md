@@ -27,6 +27,14 @@ It might be argued from the Single Responsibility Principle that the creation of
 
 The problem with this is that the constructor of you class has been made private, so that means the factory cannot access the constructor. Making the constructor public will solve the problem, but it's not ideal. We solve the problem by using an **Inner Factory**.
 
+### Object Tracking and Bulk Replacemnt
+
+You might ask what additional benefits are there to using factories. Should it always be static?
+Can it contain member variables? etc.
+
+One way to use factories is to track every object that has been created by the factory.
+You can then also perform a bulk replacement of those references.
+
 #### Inner Factory
 
 In order for the factory to access private constructors, we move the factory class inside the class to be created. If we had Point and PointFactory, we would move PointFactory into Point and rename it to just Factory, since it's now obviously a factory of Points.
