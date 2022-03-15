@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using UdemyCourseExample;
 
 namespace Builders
@@ -42,6 +40,11 @@ namespace Builders
                     .WithPostcode("456")
                     .In("City A");
                 Console.WriteLine(p4);
+
+            var car = CarBuilder.Create()
+                .OfType(CarType.Crossover)
+                .WithWheels(18)
+                .Build();
         }
     }
 }
