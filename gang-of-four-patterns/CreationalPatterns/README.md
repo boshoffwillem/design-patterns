@@ -71,6 +71,16 @@ to use multiple builders. You start by creating a general builder for the actual
 But this builder won't do any building. It's a facade to other builders, and it keeps a reference
 to the object that's being built.
 
+### Stepwise Builder
+
+There are times when you want a builder to perform a series of steps one after the other.
+
+To achieve this you make use of the Interface Segregation principle. You create various interfaces
+that each has a method whose return type is the interface containing the next method you need to
+execute. You then put a factory method on the builder that returs the interface you need to
+start with. This provides an interface chain that acts like a wizard, guiding you through the
+creation process.
+
 ## Prototypes
 
 The Prototype pattern is all about object copying.
