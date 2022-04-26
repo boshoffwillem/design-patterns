@@ -81,3 +81,25 @@ from an implementation (hierarchy).**
 - A bridge is almost like a stronger form of encapsulation,
 because it hides functionality by compartmentalizing it,
 instead of doing through a simple inheritance hierarchy.
+
+## 3. Composite
+
+A mechanism for treating individual (scalar) objects
+and compositions of objects in a uniform manner.
+
+### 3.1 Motivation for Composites
+
+- Objects uses other object's fields/properties/members through inheritance or composition
+- Composition let's us make compound objects
+  - Like a mathematical expression composed of simple expressions
+  - A grouping of shapes that consists of several shapes
+- Composite design pattern is used to treat both single (scalar)
+and composite objects uniformly
+    - I.e., ```Foo``` and ```Collection<Foo>``` have common APIs
+    
+### 3.2 Summary
+
+- Objects can use all other objects via inheritance/composition
+- Some composed and singular objects need similar/identical behaviors
+- Composite design pattern lets us treat both types of objects uniformly
+- A single object can masquerade as a collection with ```yield return this;```.
