@@ -95,11 +95,40 @@ and compositions of objects in a uniform manner.
   - A grouping of shapes that consists of several shapes
 - Composite design pattern is used to treat both single (scalar)
 and composite objects uniformly
-    - I.e., ```Foo``` and ```Collection<Foo>``` have common APIs
+    - I.e., `Foo` and `Collection<Foo>` have common APIs
     
 ### 3.2 Summary
 
 - Objects can use all other objects via inheritance/composition
 - Some composed and singular objects need similar/identical behaviors
 - Composite design pattern lets us treat both types of objects uniformly
-- A single object can masquerade as a collection with ```yield return this;```.
+- A single object can masquerade as a collection with `yield return this;`.
+
+## 4. Decorator
+
+Adding behaviour to classes without altering the classes themselves.
+
+### 4.1 Motivation for Decorator
+
+- Want to augment an object with additional functionality
+- Do not want to rewrite or alter existing code -- Open-Close Principle
+- Want to keep new functionality separate -- Single Responsibility Principle
+- Need to be able to interact with existing structures, so our decorated object
+needs to have certain traits of the original object
+- Two options:
+  - Inherit from object if possible; some objects are sealed
+  - Build a Decorator, which simply references the decorated object(s)
+  and then provides additional behaviour on top of those object(s).
+  Remember because we don't use inheritance in this case we'll have
+  to replicate the API and proxy the calls
+  
+The Decorator pattern facilitates the addition of behaviors to
+individual objects without inheriting from them.
+    
+### 4.2 Summary
+
+- A decorator keeps the reference to the decorated object(s)
+- May or may not proxy over the calls
+- A **static** variation does exists
+    - X<T<Foo>>
+    - Very limited due to inability to inherit from type parameters
