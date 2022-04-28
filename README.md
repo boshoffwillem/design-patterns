@@ -63,6 +63,7 @@ Stress the importance of good API design.
 - Adapter
 - Bridge
 - Composite
+- Decorator
 
 ### Behavioral Patterns
 
