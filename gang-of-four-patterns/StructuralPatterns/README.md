@@ -18,10 +18,10 @@ power (interface) requirement.
 Thus, we use a special device (an adapter) to give us the interface
 we require from the interface we have.
 
-**Thus, in software, the Adapter is a construct which adapts an existing
+**Thus, in software, the Adapter is a construct that adapts an existing
 interface X to conform to the required interface Y.**
 
-One of the side-effects of the adapter pattern is that you have a lot
+One of the side effects of the adapter pattern is that you have a lot
 of temporary information, and work can duplicated.
 You can deal with this by simply implementing caching or memoization,
 to prevent the Adapter from re-calculating or re-adapting something
@@ -44,8 +44,8 @@ we can solve this problem.
 ### 1.3 Summary
 
 - Implementing an adapter is easy
-- Determine the API that you have and the API that you need
-- Create a component which aggregates (has a reference to) the adapted component
+- Determine the API that you have, and the API that you need
+- Create a component that aggregates (has a reference to) the adapted component
 - Intermediate representations can pile up: use caching (memoization) and other optimizations
 
 ## 2. Bridge
@@ -90,7 +90,7 @@ and compositions of objects in a uniform manner.
 ### 3.1 Motivation for Composites
 
 - Objects uses other object's fields/properties/members through inheritance or composition
-- Composition let's us make compound objects
+- Composition lets us make compound objects
   - Like a mathematical expression composed of simple expressions
   - A grouping of shapes that consists of several shapes
 - Composite design pattern is used to treat both single (scalar)
@@ -106,7 +106,7 @@ and composite objects uniformly
 
 ## 4. Decorator
 
-Adding behaviour to classes without altering the classes themselves.
+Adding behavior to classes without altering the classes themselves.
 
 ### 4.1 Motivation for Decorator
 
@@ -118,7 +118,7 @@ needs to have certain traits of the original object
 - Two options:
   - Inherit from object if possible; some objects are sealed
   - Build a Decorator, which simply references the decorated object(s)
-  and then provides additional behaviour on top of those object(s).
+  and then provides additional behavior on top of those object(s).
   Remember because we don't use inheritance in this case we'll have
   to replicate the API and proxy the calls
   
@@ -132,3 +132,32 @@ individual objects without inheriting from them.
 - A **static** variation does exists
     - X<T<Foo>>
     - Very limited due to inability to inherit from type parameters
+
+## 5. Facade
+
+Exposing several components through a single interface.
+
+### 5.1 Motivation for Facade
+
+Let's use a house as an example.
+
+- A house has to balance complexity and presentation/useability
+- The typical home:
+    - Has many subsystems (electrical, sanitation, etc.)
+    - Complex internal structure (e.g., floor layers)
+    - End user is not exposed to internals
+- Same with software!
+    - Many systems working to provide flexibility, but...
+    - API consumers want it to just work
+
+The Facade design pattern is all about providing are simple,
+easy to understand interface over a large and sophisticated
+body of code.
+    
+### 5.2 Summary
+
+- Build a facade to provide a simplified API over a set
+of classes
+- May wish to (optionally) expose internals through the facade
+- May allow users to 'escalate' to use more complex APIs
+if they need to

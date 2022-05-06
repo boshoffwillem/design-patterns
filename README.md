@@ -64,6 +64,7 @@ Stress the importance of good API design.
 - Bridge
 - Composite
 - Decorator
+- Facade
 
 ### Behavioral Patterns
 
