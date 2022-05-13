@@ -130,7 +130,7 @@ individual objects without inheriting from them.
 - A decorator keeps the reference to the decorated object(s)
 - May or may not proxy over the calls
 - A **static** variation does exists
-    - X<T<Foo>>
+    - `<T<Foo>>`
     - Very limited due to inability to inherit from type parameters
 
 ## 5. Facade
@@ -161,3 +161,30 @@ of classes
 - May wish to (optionally) expose internals through the facade
 - May allow users to 'escalate' to use more complex APIs
 if they need to
+
+## 6. Flyweight
+
+The flyweight helps us achieve a single goal, and that goal is
+space optimization. By space optimization we mean the amount of
+memory that our applications take up.
+
+### 6.1 Motivation for Flyweight
+
+The goal of the Flyweight is to:
+- Avoid redundancy when storing data
+- E.g., MMORPG
+    - Plenty of users with identical first/last names
+    - No sense in storing same first/last name over and over again
+    - Store a list of names and pointers to them
+- .Net actually tries to do this with string interning, so an identical string is stored only once
+- Another example is that you're writing bold or italic text in the console
+    - Don't want each character to have a formatting character
+    - Operate on ranges (e.g., line number, start/end postitions
+
+The Flyweight pattern is a space optimization technique that lets us use less
+memory by storing externally the data associated with similar objects. The key here
+is that it avoids duplication.
+
+### 6.2 Summary
+
+- Store common data externally

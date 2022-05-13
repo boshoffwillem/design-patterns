@@ -65,6 +65,7 @@ Stress the importance of good API design.
 - Composite
 - Decorator
 - Facade
+- Flyweight
 
 ### Behavioral Patterns
 
