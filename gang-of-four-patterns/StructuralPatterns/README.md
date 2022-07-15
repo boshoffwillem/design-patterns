@@ -95,8 +95,8 @@ and compositions of objects in a uniform manner.
   - A grouping of shapes that consists of several shapes
 - Composite design pattern is used to treat both single (scalar)
 and composite objects uniformly
-    - I.e., `Foo` and `Collection<Foo>` have common APIs
-    
+  - I.e., `Foo` and `Collection<Foo>` have common APIs
+
 ### 3.2 Summary
 
 - Objects can use all other objects via inheritance/composition
@@ -124,14 +124,14 @@ needs to have certain traits of the original object
   
 The Decorator pattern facilitates the addition of behaviors to
 individual objects without inheriting from them.
-    
+
 ### 4.2 Summary
 
 - A decorator keeps the reference to the decorated object(s)
 - May or may not proxy over the calls
 - A **static** variation does exists
-    - `<T<Foo>>`
-    - Very limited due to inability to inherit from type parameters
+  - `<T<Foo>>`
+  - Very limited due to inability to inherit from type parameters
 
 ## 5. Facade
 
@@ -143,17 +143,17 @@ Let's use a house as an example.
 
 - A house has to balance complexity and presentation/useability
 - The typical home:
-    - Has many subsystems (electrical, sanitation, etc.)
-    - Complex internal structure (e.g., floor layers)
-    - End user is not exposed to internals
+  - Has many subsystems (electrical, sanitation, etc.)
+  - Complex internal structure (e.g., floor layers)
+  - End user is not exposed to internals
 - Same with software!
-    - Many systems working to provide flexibility, but...
-    - API consumers want it to just work
+  - Many systems working to provide flexibility, but...
+  - API consumers want it to just work
 
 The Facade design pattern is all about providing are simple,
 easy to understand interface over a large and sophisticated
 body of code.
-    
+
 ### 5.2 Summary
 
 - Build a facade to provide a simplified API over a set
@@ -171,15 +171,17 @@ memory that our applications take up.
 ### 6.1 Motivation for Flyweight
 
 The goal of the Flyweight is to:
+
 - Avoid redundancy when storing data
 - E.g., MMORPG
-    - Plenty of users with identical first/last names
-    - No sense in storing same first/last name over and over again
-    - Store a list of names and pointers to them
-- .Net actually tries to do this with string interning, so an identical string is stored only once
+  - Plenty of users with identical first/last names
+  - No sense in storing same first/last name over and over again
+  - Store a list of names and pointers to them
+- .Net actually tries to do this with string interning,
+so an identical string is stored only once
 - Another example is that you're writing bold or italic text in the console
-    - Don't want each character to have a formatting character
-    - Operate on ranges (e.g., line number, start/end postitions
+  - Don't want each character to have a formatting character
+  - Operate on ranges (e.g., line number, start/end positions
 
 The Flyweight pattern is a space optimization technique that lets us use less
 memory by storing externally the data associated with similar objects. The key here
@@ -188,3 +190,39 @@ is that it avoids duplication.
 ### 6.2 Summary
 
 - Store common data externally
+
+## 7. Proxy
+
+A proxy is all about providing an interface for accessing a particular resource,
+by essentially replicating that interface.
+
+### 7.1 Motivation for Proxy
+
+- Let's assume you're making a call to `foo.Bar()`
+- There is an assumption here that `foo` is in the process as `Bar()`
+- But, what if later on we want to put all `foo`-related operations
+in a separate process?
+  - RPCs over the wire
+  - Can we do this without changing our existing code?
+- This is where the Proxy comes in.
+- The idea is very simple, you an object with the exact same interface
+but with different behavior
+- For RPCs are an example of a communication Proxy
+
+A Proxy is thus a class that functions as an interface to a particular
+resource. That resource may be remote, expensive to construct,
+or may require logging, or some other added functionality.
+
+This is the idea of providing additional functionality on the object
+but the nature of that functionality doesn't have to be intrinsic to
+the object itself. For example, you might want to have a protection proxy
+over all your objects and have authentications rules.
+
+It may seem like a Proxy is the same thing as a Decorator, because they both
+aggregate or wrap some original object. The key difference is that a Decorator
+modifies the original class by adding new members. The Proxy modifies the original
+class by adding behavior/conditions over existing members.
+
+### 7.2 Summary
+
+asd

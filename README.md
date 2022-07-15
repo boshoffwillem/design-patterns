@@ -7,7 +7,7 @@ This repository also contains any other patterns that I've come to learn.
 
 ## Recursive Generics Pattern
 
-This pattern is defined first, becuase many of the other examples use this.
+This pattern is defined first, because many of the other examples use this.
 Recursive generics is used when you have a decent inheritance hierarchy
 and you need to be able to propagate the most derived class to either
 the base class or any other parent class.
@@ -66,6 +66,7 @@ Stress the importance of good API design.
 - Decorator
 - Facade
 - Flyweight
+- Proxy
 
 ### Behavioral Patterns
 
